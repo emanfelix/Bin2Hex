@@ -1,0 +1,96 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Tue Dec  6 10:49:24 2022
+| Host         : DESKTOP-EEO5VF1 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_mod_control_sets_placed.rpt
+| Design       : top_mod
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    18 |
+|    Minimum number of control sets                        |    18 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    71 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    18 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     5 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     6 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              28 |           11 |
+| No           | No                    | Yes                    |               6 |            3 |
+| No           | Yes                   | No                     |             142 |           40 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |              27 |           10 |
+| Yes          | Yes                   | No                     |              14 |            6 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------------+----------------------------------------+-------------------------------+------------------+----------------+
+|             Clock Signal             |              Enable Signal             |        Set/Reset Signal       | Slice Load Count | Bel Load Count |
++--------------------------------------+----------------------------------------+-------------------------------+------------------+----------------+
+|  roundTimer/points_reg               |                                        | roundTimer/seconds_reg[2]_1   |                1 |              1 |
+|  slower/clk50_reg_0                  |                                        | randumb/Rand[3]_i_2_n_0       |                1 |              1 |
+|  slower/clkms_reg_0                  |                                        | roundTimer/seconds[4]_i_3_n_0 |                1 |              1 |
+|  program/Num_val_next_reg[3]_i_1_n_0 |                                        |                               |                2 |              4 |
+|  slower/clk50_reg_0                  | randumb/Resetn                         | randumb/Rand[3]_i_2_n_0       |                1 |              4 |
+|  slower/clk400_reg_0                 |                                        | counterforSegs/Q[2]_i_2_n_0   |                1 |              4 |
+|  clock_IBUF_BUFG                     | button/E[0]                            | reset_IBUF                    |                2 |              4 |
+|  slower/clkms_reg_0                  | roundTimer/seconds[4]_i_1_n_0          | roundTimer/seconds[4]_i_3_n_0 |                3 |              5 |
+|  clock_IBUF_BUFG                     |                                        | reset_IBUF                    |                5 |              8 |
+|  clock_IBUF_BUFG                     | button/FSM_onehot_state_reg[7]_i_1_n_0 | reset_IBUF                    |                2 |              8 |
+|  slower/clkms_reg_0                  | roundTimer/msecs[9]_i_1_n_0            | roundTimer/seconds[4]_i_3_n_0 |                4 |             10 |
+|  clock_IBUF_BUFG                     | dj/time10_carry__2_n_0                 | program/SR[0]                 |                4 |             10 |
+|  clock_IBUF_BUFG                     |                                        | dj/counter[0]_i_1_n_0         |                5 |             20 |
+|  clock_IBUF_BUFG                     |                                        |                               |                9 |             24 |
+|  clock_IBUF_BUFG                     |                                        | slower/counter50[0]_i_1_n_0   |                7 |             27 |
+|  clock_IBUF_BUFG                     |                                        | slower/counter400[0]_i_1_n_0  |                7 |             27 |
+|  clock_IBUF_BUFG                     |                                        | slower/counterms[0]_i_1_n_0   |                7 |             27 |
+|  clock_IBUF_BUFG                     |                                        | dj/time1[0]_i_1_n_0           |                8 |             32 |
++--------------------------------------+----------------------------------------+-------------------------------+------------------+----------------+
+
+
