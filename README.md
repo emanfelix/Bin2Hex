@@ -1,5 +1,5 @@
 # Bin2Hex
-A small game written in Verilog for parcticing binary to hex conversion
+A small game written in Verilog for practicing binary to hex conversion
 ### Where does it run
 This code can be put on any FPGA board but current XDC file is is for Nexys A7 100t
 
